@@ -280,4 +280,4 @@ See `pyproject.toml` for full dependency list:
 
 ## License
 
-[Add your license here]
+See `LICENSE`
