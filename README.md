@@ -154,6 +154,8 @@ uv run hotdog-not-hotdog --train --model-size s
 uv run hotdog-not-hotdog --train --export-format torchscript
 ```
 
+<img src="training.gif" alt="Training Progress" width="400">
+
 Training will:
 - Use the dataset in `data/hotdog/`
 - Train for 100 epochs
@@ -257,6 +259,7 @@ uv run hotdog-not-hotdog --validate runs/classify/train/weights/best.pt
 # Export trained model as TorchScript
 uv run hotdog-not-hotdog --export --export-format torchscript
 ```
+
 
 ## Development
 
