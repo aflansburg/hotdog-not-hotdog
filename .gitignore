@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Model artifacts
+models/
+runs/
+
+# Misc
+.DS_Store
+*.cache
+
+# Training data
+data/hotdog/train/*
+data/hotdog/val/*
+
+
+# model artifacts
+*.pt
+*.torchscript
+*.ptl
+*.pth
+*.pkl

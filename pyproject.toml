@@ -1,0 +1,26 @@
+[project]
+name = "hotdog-not-hotdog"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.32.4",
+    "torch>=2.7.1",
+    "torchaudio>=2.7.1",
+    "torchvision>=0.22.1",
+    "ultralytics>=8.3.162",
+    "kaggle>=1.6.14",
+]
+
+[project.scripts]
+hotdog-not-hotdog = "hotdog.main:main"
+hdnhd = "hotdog.main:main"
+hdnhd-setup = "setup_dataset:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hotdog"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
