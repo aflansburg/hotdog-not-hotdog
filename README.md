@@ -11,6 +11,7 @@ This YOLO-based image classifier to detect whether an image contains a hotdog or
 - **Validate** model performance
 - **Export** models in different formats (PyTorch, TorchScript)
 - **CLI interface** for easy usage
+- **Included dataset setup script** for training the model on a Kaggle dataset of sample images
 
 ## Setup
 
