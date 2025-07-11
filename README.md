@@ -2,7 +2,7 @@
 
 A project nobody asked for.
 
-This YOLO-based image classifier to detect whether an image contains a hotdog or not. Built with [Ultralytics](https://www.ultralytics.com/) [YOLO11](https://docs.ultralytics.com/models/yolo11/) and inspired by Silicon Valley's "See Food" app.
+YOLO-based image classifier to detect whether an image contains a hotdog or not. Built with [Ultralytics](https://www.ultralytics.com/) [YOLO11](https://docs.ultralytics.com/models/yolo11/) and inspired by Silicon Valley's "See Food" app.
 
 ## Features
 
