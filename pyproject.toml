@@ -11,6 +11,7 @@ dependencies = [
     "torchvision>=0.22.1",
     "ultralytics>=8.3.162",
     "kaggle>=1.6.14",
+    "hub-sdk>=0.0.20",
 ]
 
 [project.scripts]
@@ -24,3 +25,8 @@ packages = ["src/hotdog"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "python-dotenv>=1.1.1",
+]

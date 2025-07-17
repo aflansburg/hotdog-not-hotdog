@@ -260,6 +260,21 @@ uv run hotdog-not-hotdog --validate runs/classify/train/weights/best.pt
 uv run hotdog-not-hotdog --export --export-format torchscript
 ```
 
+### Local runs
+When running (like I primarily do) on your local dev machine, you can pass the environment variable `DEV=True` to ensure environment variables (and any other environment specific behavior) are considered.
+
+### Using with Ultralytics Hub
+
+You can set the following variables in your `.env.local` file:
+
+```
+ULTRALYTICS_API_KEY=abcdefghijklmnopqrstuvwxyz1234567890
+ULTRALYTICS_MODEL_URI="https://hub.ultralytics.com/models/<model-identifier>"
+```
+
+Doing so will allow you to train your model with the "bring your own agent" UI in [Ultralytics Hub](https://hub.ultralytics.com/models).
+
+**Note**: Doing this will attempt to download the dataset stored in your Ultralytics Hub. I haven't spent the time (and likely won't) to determine how to bypass and use a local dataset instead.
 
 ## Development
 

@@ -1,6 +1,23 @@
 import argparse
+import os
 from .train import train, validate, export_model
 from .predict import predict
+
+DEV = os.getenv("DEV", "False").lower() == "true"
+
+if DEV:
+    print("Running in dev mode.\n Loading .env.local")
+    from dotenv import load_dotenv
+
+    load_dotenv(".env.local")
+
+ULTRALYTICS_BYO_AGENT = False
+
+if os.getenv("ULTRALYTICS_API_KEY"):
+    print("ULTRALYTICS_API_KEY is set - using 'bring your own agent mode'")
+    ULTRALYTICS_BYO_AGENT = True
+else:
+    print("ULTRALYTICS_API_KEY is not set and will not communicate with Ultralytics")
 
 
 def main():
@@ -46,7 +63,10 @@ def main():
 
         print(f"Training mode selected with model size: {args.model_size}")
         train(
-            export_format=args.export_format, model_size=args.model_size, epochs=epochs
+            export_format=args.export_format,
+            model_size=args.model_size,
+            epochs=epochs,
+            byo_agent=ULTRALYTICS_BYO_AGENT,
         )
         return
     elif args.predict:

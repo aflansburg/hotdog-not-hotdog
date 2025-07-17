@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import shutil
 from .utils import check_sys_arch
@@ -52,14 +53,26 @@ def export_model(export_format: str = "pt", model_path: str = None) -> None:
         print(f"Model exported to {final_path}")
 
 
-def train(export_format: str = "pt", model_size: str = "s", epochs: int = 200) -> None:
+def train(
+    export_format: str = "pt",
+    model_size: str = "s",
+    epochs: int = 200,
+    byo_agent: bool = False,
+) -> None:
     """
     Train a model and export it to the models directory.
 
     Args:
         export_format: The format to export the model to.
     """
-    from ultralytics import YOLO
+    from ultralytics import YOLO, checks, hub
+
+    if byo_agent:
+        checks()
+        hub.login(os.getenv("ULTRALYTICS_API_KEY"))
+        model = YOLO(os.getenv("ULTRALYTICS_MODEL_URI"))
+    else:
+        model = YOLO(f"yolo11{model_size}-cls.pt")
 
     device = check_sys_arch()
 
@@ -67,7 +80,6 @@ def train(export_format: str = "pt", model_size: str = "s", epochs: int = 200) -
 
     data_path = "data/hotdog"
 
-    model = YOLO(f"yolo11{model_size}-cls.pt")
     results = model.train(
         data=data_path,
         epochs=epochs,
