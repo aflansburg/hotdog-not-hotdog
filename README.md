@@ -4,6 +4,8 @@ A project nobody asked for.
 
 YOLO-based image classifier to detect whether an image contains a hotdog or not. Built with [Ultralytics](https://www.ultralytics.com/) [YOLO11](https://docs.ultralytics.com/models/yolo11/) and inspired by Silicon Valley's "See Food" app.
 
+*Note: If you came here for a vibe coded project with API keys exposed, I'm happy to disappoint you, but let me know, I can point you in the direction of several - some of which are likely in production at med-large orgs!*
+
 ## Features
 
 - **Train** custom hotdog classification models
